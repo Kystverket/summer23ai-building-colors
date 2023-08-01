@@ -1,0 +1,5 @@
+API = {"API_KEY": "your-API key"}
+////////////////////////////
+//This is a template for the config.js file that should be added to run
+//the different scripts. Add your personal google API key to this file.
+//When this is done, rename the file to "config.js"

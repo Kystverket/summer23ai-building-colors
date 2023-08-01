@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="config/config.js"></script>
+  <script src="js/automatic_screenshot.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <title>ImageGetter</title>
+  <link rel="stylesheet" href="css/styling.css">
+</head>
+<body>
+
+  <form onsubmit="getAddresses(event)">
+    <div>
+      <input
+        type="search"
+        id="mySearch"
+        name="q"
+        placeholder="postnr, gate eller adresse" />
+        <button type="submit">Hent adresser</button><br><br>
+    </div>
+  </form><br>
+
+  <div id="messageBox" class="hidden">
+    <p id="message"></p><br>
+    <h4>Hent bilder:</h4>
+    <label for="first">Fra adresse nr</label><br>
+    <input type="number" id="first" name="first" step="1" value="0"><br>
+    <label for="last">Til adresse nr ... (la være tom dersom alle adresser i søket skal hentes)</label><br>
+    <input type="number" id="last" name="last" step="1"><br><br>
+    <button onclick=" getImages(event)">Last ned</button><button onClick=location.reload()>Stans nedlasting</button>
+    
+
+  </div>
+
+  <div id="South" style="width:500px;;height:500px;"></div>
+  <div id="West" style="width:500px;height:500px;"></div>
+  <div id="North" style="width:500px;height:500px;"></div>
+  <div id="East" style="width:500px;height:500px;"></div>
+</body>
+</html>
