@@ -14,15 +14,18 @@
 
 
 ## About the project <a name="about"></a>
-What we are doing
+A summer student project by students at the TEFT Lab in Ålesund for Kystverket. We utilized the YOLO algorithm and Google Maps API to detect buildings and classify their color from image data. The project aims to create a database of building colors to be used in Kystverkets' digital twin application for more realistic representation. It is still a work in progress, but we currently have a semi-automatic system for classifying buildings based on address location which can be used for testing on a small area and further development. More information about the project and our thoughts about the way forward can be found in the [documentation](#docs), which should be read before starting. 
 
 ## Overview <a name="overview"></a>
-What different files and folders are.
+**NB! Ikke ferdig**
+trainingdata: This folder contains a collection of unlabeled images that can be used to create a dataset for training machine learning models or other data-related purposes.
+prototyping: This folder is dedicated to storing different prototypes or experimental versions of the project. It may contain subfolders, each representing a specific prototype with its unique code.
+
 
 ## Setup <a name="setup"></a>
-1. **Clone or fork the repository**
-2. **Obtain a Google Maps API key from https://developers.google.com/maps/documentation/javascript/get-api-key**
-3. **Enter your API_KEY in the `config.js.template` file inside the `config` folder. Save the file as `config.js` in the same folder.**
+1. Clone or fork the repository
+2. Obtain a Google Maps API key from **https://developers.google.com/maps/documentation/javascript/get-api-key**
+3. Enter your API_KEY in the `config.js.template` file inside the `config` folder. Save the file as `config.js` in the same folder.
 ```js
 API = {"API_KEY": "your-API key"}
 ////////////////////////////
@@ -33,60 +36,54 @@ API = {"API_KEY": "your-API key"}
 This should be enough to run all the code except the `csv-reader.js` inside `prototyping/google_45degree`. More information about the prototypes can be read in the separate section on [prototyping](#prototyping). 
 
 ## Usage <a name="usage"></a>
-The process of classifying building colors is currently split into two steps. This is not ideal, but should be a solvable issue. However it is where we are currently at. The issue arises from the fact that the images we get are screenshots of Google Map views, and not just images fetched directly from an API. Our further thoughts about how to combat this issue going forward can be found in `link to latex document`. The steps to use the model are:
-1. ### Downloading Images:<a name="download"></a>
-    1. Open the `index.html` file
-    2. Enter the address or postalcode you want to get images from.
-    
-        ![Screenshot](assets/searchbar.png)
 
-    3. That should yield the following prompt. Input the range of addresses you want images of and press 'last ned'. This will iterate through the list of addresses and save images from south, west, north and east from each address to your browsers default ```Downloads``` folder. Most browsers will allow you to set another default downloads folder. This can be useful for immidiately getting the images to the right place for running the model.
+### Building a dataset
+In this project we used **[roboflow](https://roboflow.com/)** to create our own dataset for building the model. Please refer to the [documentation](#docs) for further details on how to construct a dataset. To fetch the images we used a tool inside `tools` which allows the user quickly grab screenshots of specific buildings. To use it open the `tool.html` file. This will render four different Google Maps views. Center the building you want by clicking the topmost map. This should automatically center all the maps. Sometimes you will need manual adjustment of a map to get a good image, so make sure to double check before downloading. Download the images by clicking on the 'Take screenshot' button. 
+ 
+<img src="assets/tool.png"  width="600" /><br>
 
-        ![Screenshot](assets/messagebox.png)
-    
-    4. If using Google Chrome you have to press "Allow" to download the images. If fetching a bunch of addresses this popup will need to be pressed again after some time to continue screenshotting. A workaround is to use another browser such as Mozilla Firefox. Also note that if you do not press "Allow" the script will still iterate through the addresses and display the map views for each address. This is a waste of API requests so keep that in mind. To stop the capturing of screenshots at any point press "Stans nedlasting", refresh or exit the page.
+### Model
 
-         <img src="assets/imagegetter.png"  width="600" /><br>
+The process of classifying building colors is currently split into two steps. First we download images of the address locations we are interested in. Then we run the model on the downloaded images. This is not ideal, but should be a solvable issue. However it is where we are currently at. The issue arises from the fact that the images we get are screenshots of Google Map views, and not just images fetched directly from an API. Our further thoughts about how to combat this issue going forward can be found in `link to latex document`. The steps to use the model are:
+### Downloading Images:<a name="download"></a>
+1. Open the `index.html` file
+2. Enter the address or postalcode you want to get images from. This will send an API request to the **[Open Address API from Kartverket](https://ws.geonorge.no/adresser/v1/)**.
 
-2. ### Running the Model<a name="model"></a>
-    1. Put some steps here
+    ![Screenshot](assets/searchbar.png)
+
+3. That should yield the following prompt. Input the range of addresses you want images of and press 'last ned'. This will iterate through the list of addresses and save images from south, west, north and east from each address to your browsers default ```Downloads``` folder. Most browsers will allow you to set another default downloads folder. This can be useful for immidiately getting the images to the right place for running the model.
+
+    ![Screenshot](assets/messagebox.png)
+
+4. If using Google Chrome you have to press "Allow" to download the images. If fetching a bunch of addresses this popup will need to be pressed again after some time to continue screenshotting. A workaround is to use another browser such as Mozilla Firefox. Also note that if you do not press "Allow" the script will still iterate through the addresses and display the map views for each address. This is a waste of API requests so keep that in mind. To stop the capturing of screenshots at any point press "Stans nedlasting", refresh or exit the page.
+
+    <img src="assets/imagegetter.png"  width="600" /><br>
+
+### Running the Model<a name="model"></a>
+1. Put some steps here
 
 ## Prototyping <a name="prototyping"></a>
-What they are and how to run them.
+We have also experimented with different some different image sources from Google, namely Street View and Static Satellite map. In `prototyping\google_streetview` and `prototyping\google_staticmap` respectively there is code for fetching images from these sources using Python.<br><br>
+The `prototyping\google_45degree\screenshot_old.js` file is our first successful attempt at taking screenshots from Google Maps views automatically. It may be simpler to read and build on than the current program. To run it open the screenshot.html file. In the same folder there is also an `address_getter.py`. Similarly to the main program this fetches address locations from **[Kartverket](https://ws.geonorge.no/adresser/v1/)**, but writes them to a .csv or .json file. There is also a `csv_reader.js`. This file uses the built-in file system module `'fs'` from **[Node.js](https://nodejs.org/en)** so make sure that you have Node.js installed or something like **[CodeRunner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)** in VS Code to try it. 
 
 ## API Reference <a name="api"></a>
 - **[Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview)**
+    - **[W3Schools Google Maps API Tutorial](https://www.w3schools.com/graphics/google_maps_intro.asp)**
 - **[Google Maps JavaScript API 45 Degree Imagery](https://developers.google.com/maps/documentation/javascript/examples/aerial-simple)** 
-- **[W3Schools Google Maps API Tutorial](https://www.w3schools.com/graphics/google_maps_intro.asp)**
 - **[Open Address API from Kartverket](https://ws.geonorge.no/adresser/v1/)**
 - **[Google Street View Static API](https://developers.google.com/maps/documentation/streetview/overview)**
+    - **[Tutorial](https://andrewpwheeler.com/2015/12/28/using-python-to-grab-google-street-view-imagery/)** 
 - **[Google Maps Static API](https://developers.google.com/maps/documentation/maps-static/overview)**
+
 
 
 ## Documentation <a name="docs"></a>
 Refer to latex guide/Roboflow, Ultralytics/ our own notebooks
 
 ## Contact <a name="contact"></a>
-Summer students:
-Elias Lerheim Birkeland, industriell økonomi og teknologiledelse 
-eliaslbi@stud.ntnu.no 
+**Summer students:**<br>
+Elias Lerheim Birkeland - industriell økonomi og teknologiledelse: eliaslbi@stud.ntnu.no<br>
+Martin Valderhaug Larsen - informatikk: martivl@stud.ntnu.no<br> 
+Simon Lervåg Breivik - kybernetikk og robotikk: simonlb@ntnu.no 
 
 
-
-
-
-
-# Potential useful resources
-|Link|
-|--------------|
-|[Kystinfo](https://kystinfo.no/)|
-|[Kystdatahuset](https://kystdatahuset.no/)|
-|[Swagger UI](https://kystdatahuset.no/ws/swagger/index.html)|
-|[data.kystverket.no](https://data.kystverket.no/)|
-|[Historisk AIS](https://hais.kystverket.no/)|
-|[Havbase](https://havbase.no/)|
-|[Kart over alternative drivstoff for sjøfarten - Kystverket](https://lavutslipp.kystverket.no/)|
-|[Geonorge](https://www.geonorge.no/)|
-|[Felles datakatalog](https://data.norge.no/)|
-|[BarentsWatch](https://www.barentswatch.no/)|
-|[BarentsWatch API](https://www.barentswatch.no/bwapi/)|

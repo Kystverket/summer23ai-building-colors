@@ -1,3 +1,4 @@
+
 // Access the Google API key from config.js
 const apiKey = API["API_KEY"];
 // Flag to track if the Google Maps API is already loaded
@@ -155,10 +156,10 @@ function initializeMap(address, mapId, centerLocation, heading) {
   
   
   function takeScreenshot(filename, mapId) {
-    return new Promise(function(resolve) {
+    return new Promise(async function(resolve) {
       // Use html2canvas to capture the screenshot
       var targetDiv = document.getElementById(mapId);
-      html2canvas(targetDiv, { useCORS: true }).then(function(canvas) {
+      await html2canvas(targetDiv, { useCORS: true }).then(function(canvas) {
         // Convert the canvas to a data URL
         var dataURL = canvas.toDataURL('image/png');
   

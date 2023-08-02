@@ -1,6 +1,6 @@
 
 
-  // Access the API key from config.js
+  // Access the API key from config/config.js
   var apiKey = API["API_KEY"];
   
   // Load the Google Maps JavaScript API asynchronously
