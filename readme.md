@@ -67,7 +67,11 @@ What they are and how to run them.
 Refer to latex guide/Roboflow, Ultralytics/ our own notebooks
 
 ## Contact <a name="contact"></a>
-[How users can contact you, or information about the project's maintainers]
+Summer students:
+Elias Lerheim Birkeland, industriell økonomi og teknologiledelse 
+eliaslbi@stud.ntnu.no 
+
+
 
 
 
