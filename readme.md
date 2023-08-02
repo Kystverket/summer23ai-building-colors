@@ -81,9 +81,12 @@ The `prototyping\google_45degree\screenshot_old.js` file is our first successful
 Refer to latex guide/Roboflow, Ultralytics/ our own notebooks
 
 ## Contact <a name="contact"></a>
-**Summer students:**<br>
-Elias Lerheim Birkeland - industriell økonomi og teknologiledelse: eliaslbi@stud.ntnu.no<br>
-Martin Valderhaug Larsen - informatikk: martivl@stud.ntnu.no<br> 
-Simon Lervåg Breivik - kybernetikk og robotikk: simonlb@ntnu.no 
-
-
+- **Elias Lerheim Birkeland**
+    - Industriell økonomi og teknologiledelse
+    - Email: eliaslbi@stud.ntnu.no
+- **Martin Valderhaug Larsen**
+  - Informatikk
+  - Email: martivl@stud.ntnu.no
+- **Simon Lervåg Breivik**
+  - Kybernetikk og robotikk
+  - Email: simonlb@ntnu.no
