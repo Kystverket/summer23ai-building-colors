@@ -20,9 +20,9 @@ A summer student project by students at the TEFT Lab in Ålesund for Kystverket.
 **NB! Ikke ferdig**
 ### Important contents ###
 - `index.html` is used for fetching images to be put into the model. The functionality lies within `js/automatic-screenshot.js`
-- The `insert folder name here` folder contains our deployment of the YOLO model.
+- The `yolo_implementation` folder contains our deployment of the YOLO model.
 - The `tools` folder contains code for fetching images for constructing a dataset to train the model on.
-- `trainingdata` contains some unlabeled images which can be used to build a new dataset to train your own model on. Please note that these images have already been used to train our model. 
+- `training_data` contains some unlabeled images which can be used to build a new dataset to train your own model on. Please note that these images have already been used to train our model. 
 - `prototyping` contains some tests we did with other image sources.
 
 ## Setup <a name="setup"></a>
