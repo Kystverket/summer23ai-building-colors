@@ -27,7 +27,7 @@ A summer student project by students at the TEFT Lab in Ålesund for Kystverket.
 
 ## Setup <a name="setup"></a>
 1. Clone or fork the repository
-2. Obtain a Google Maps API key from **https://developers.google.com/maps/documentation/javascript/get-api-key**
+2. Obtain a Google Maps API key from https://developers.google.com/maps/documentation/javascript/get-api-key
 3. Enter your API_KEY in the `config.js.template` file inside the `config` folder. Save the file as `config.js` in the same folder.
 ```js
 API = {"API_KEY": "your-API key"}
@@ -41,7 +41,7 @@ This should be enough to run all the code except the `csv-reader.js` inside `pro
 ## Usage <a name="usage"></a>
 
 ### Building a dataset
-In this project we used **[roboflow](https://roboflow.com/)** to create our own dataset for building the model. Please refer to the [documentation](#docs) for further details on how to construct a dataset. To fetch the images we used a tool inside `tools` which allows the user quickly grab screenshots of specific buildings. To use it open the `tool.html` file. This will render four different Google Maps views. Center the building you want by clicking the topmost map. This should automatically center all the maps. Sometimes you will need manual adjustment of a map to get a good image, so make sure to double check before downloading. Download the images by clicking on the 'Take screenshot' button. 
+In this project we used [roboflow](https://roboflow.com/) to create our own dataset for building the model. Please refer to the [documentation](#docs) for further details on how to construct a dataset. To fetch the images we used a tool inside `tools` which allows the user quickly grab screenshots of specific buildings. To use it open the `tool.html` file. This will render four different Google Maps views. Center the building you want by clicking the topmost map. This should automatically center all the maps. Sometimes you will need manual adjustment of a map to get a good image, so make sure to double check before downloading. Download the images by clicking on the 'Take screenshot' button. 
  
 <img src="assets/tool.png"  width="600" /><br>
 
@@ -50,7 +50,7 @@ In this project we used **[roboflow](https://roboflow.com/)** to create our own 
 The process of classifying building colors is currently split into two steps. First we download images of the address locations we are interested in. Then we run the model on the downloaded images. This is not ideal, but should be a solvable issue. However it is where we are currently at. The issue arises from the fact that the images we get are screenshots of Google Map views, and not just images fetched directly from an API. Our further thoughts about how to combat this issue going forward can be found in `link to latex document`. The steps to use the model are:
 ### Downloading Images:<a name="download"></a>
 1. Open the `index.html` file
-2. Enter the address or postalcode you want to get images from. This will send an API request to the **[Open Address API from Kartverket](https://ws.geonorge.no/adresser/v1/)**.
+2. Enter the address or postalcode you want to get images from. This will send an API request to the [Open Address API from Kartverket](https://ws.geonorge.no/adresser/v1/).
 
     ![Screenshot](assets/searchbar.png)
 
@@ -67,16 +67,16 @@ The process of classifying building colors is currently split into two steps. Fi
 
 ## Prototyping <a name="prototyping"></a>
 We have also experimented with different some different image sources from Google, namely Street View and Static Satellite map. In `prototyping\google_streetview` and `prototyping\google_staticmap` respectively there is code for fetching images from these sources using Python.<br><br>
-The `prototyping\google_45degree\screenshot_old.js` file is our first successful attempt at taking screenshots from Google Maps views automatically. It may be simpler to read and build on than the current program. To run it open the screenshot.html file. In the same folder there is also an `address_getter.py`. Similarly to the main program this fetches address locations from **[Kartverket](https://ws.geonorge.no/adresser/v1/)**, but writes them to a .csv or .json file. In addition, there is a `csv_reader.js`. This file uses the built-in file system module `'fs'` from **[Node.js](https://nodejs.org/en)** so make sure that you have Node.js installed or something like **[CodeRunner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)** in VS Code to try it. 
+The `prototyping\google_45degree\screenshot_old.js` file is our first successful attempt at taking screenshots from Google Maps views automatically. It may be simpler to read and build on than the current program. To run it open the screenshot.html file. In the same folder there is also an `address_getter.py`. Similarly to the main program this fetches address locations from [Kartverket](https://ws.geonorge.no/adresser/v1/), but writes them to a .csv or .json file. In addition, there is a `csv_reader.js`. This file uses the built-in file system module `'fs'` from [Node.js](https://nodejs.org/en) so make sure that you have Node.js installed or something like [CodeRunner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) in VS Code to try it. 
 
 ## API Reference <a name="api"></a>
-- **[Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview)**
-    - **[W3Schools Google Maps API Tutorial](https://www.w3schools.com/graphics/google_maps_intro.asp)**
-- **[Google Maps JavaScript API 45 Degree Imagery](https://developers.google.com/maps/documentation/javascript/examples/aerial-simple)** 
-- **[Open Address API from Kartverket](https://ws.geonorge.no/adresser/v1/)**
-- **[Google Street View Static API](https://developers.google.com/maps/documentation/streetview/overview)**
-    - **[Tutorial](https://andrewpwheeler.com/2015/12/28/using-python-to-grab-google-street-view-imagery/)** 
-- **[Google Maps Static API](https://developers.google.com/maps/documentation/maps-static/overview)**
+- [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview)
+    - [W3Schools Google Maps API Tutorial](https://www.w3schools.com/graphics/google_maps_intro.asp)
+- [Google Maps JavaScript API 45 Degree Imagery](https://developers.google.com/maps/documentation/javascript/examples/aerial-simple) 
+- [Open Address API from Kartverket](https://ws.geonorge.no/adresser/v1/)
+- [Google Street View Static API](https://developers.google.com/maps/documentation/streetview/overview)
+    - [Tutorial](https://andrewpwheeler.com/2015/12/28/using-python-to-grab-google-street-view-imagery/) 
+- [Google Maps Static API](https://developers.google.com/maps/documentation/maps-static/overview)
 
 
 
