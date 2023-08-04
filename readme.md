@@ -82,7 +82,8 @@ The `prototyping\google_45degree\screenshot_old.js` file is our first successful
 
 ## Documentation <a name="docs"></a>
 - Refer to latex guide
-- [Object detection 101](https://colab.research.google.com/drive/1GLWpHQ8mNH1Mfj1RJzq4046cb_qbuInI) - a general guide on how to train your own Yolo model.
+- [Object detection 101](https://colab.research.google.com/drive/1GLWpHQ8mNH1Mfj1RJzq4046cb_qbuInI) - a general guide on how to train and export your own Yolo model.
+- [Object_Detection_Buildings](https://colab.research.google.com/drive/1bmXk0ZHTdMl8Cikm1-Y3JRnMGnzOO1_Y?usp=sharing#scrollTo=ECqlKZCHU5H8) - a guide on how to train and export your own Yolo model specifically for building colors.
 - [Roboflow Docs](https://docs.roboflow.com/)
 - [Ultralytics YOLOv8 Docs](https://docs.ultralytics.com/)
 
