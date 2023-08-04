@@ -81,7 +81,10 @@ The `prototyping\google_45degree\screenshot_old.js` file is our first successful
 
 
 ## Documentation <a name="docs"></a>
-Refer to latex guide/Roboflow, Ultralytics/ our own notebooks
+- Refer to latex guide
+- [Object detection 101](https://colab.research.google.com/drive/1GLWpHQ8mNH1Mfj1RJzq4046cb_qbuInI) - a general guide on how to train your own Yolo model.
+- [Roboflow Docs](https://docs.roboflow.com/)
+- [Ultralytics YOLOv8 Docs](https://docs.ultralytics.com/)
 
 ## Contact <a name="contact"></a>
 - **Elias Lerheim Birkeland**
