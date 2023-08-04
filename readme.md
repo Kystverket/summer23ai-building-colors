@@ -14,13 +14,13 @@
 
 
 ## About the project <a name="about"></a>
-A summer student project by students at the TEFT Lab in Ålesund for Kystverket. We utilized the YOLO algorithm and Google Maps API to detect buildings and classify their color from image data. The project aims to create a database of building colors to be used in Kystverkets' digital twin application for more realistic representation. It is still a work in progress, but we currently have a semi-automatic system for classifying buildings based on address location. It can be used for testing on a small geographical area and further development. More information about the project and our thoughts on the way forward can be found in the [documentation](#docs), which should be read before starting. 
+A summer student project by students at the TEFT Lab in Ålesund for Kystverket. The project aims to automatically classify building colors to be used in Kystverkets' digital twin application for more realistic representation. We utilized the YOLO algorithm and Google Maps API to detect buildings and classify their color from image data. It is still a work in progress, but we currently have a semi-automatic system for classifying buildings based on address location. It can be used for testing on a small geographical area and further development. More information about the project and our thoughts on the way forward can be found in the [documentation](#docs), which should be read before starting. 
 
 ## Overview <a name="overview"></a>
 **NB! Ikke ferdig**
 ### Important contents ###
 - `index.html` is used for fetching images to be put into the model. The functionality lies within `js/automatic-screenshot.js`
-- The `yolo_implementation` folder contains our deployment of the YOLO model.
+- The `yolo_implementation` folder contains jupyter notebooks for using the model.
 - The `tools` folder contains code for fetching images for constructing a dataset to train the model on.
 - `training_data` contains some unlabeled images which can be used to build a new dataset to train your own model on. Please note that these images have already been used to train our model. 
 - `prototyping` contains some tests we did with other image sources.
