@@ -88,7 +88,8 @@ async function getImages(event) {
       lastRow = allAddresses.length;
     }
     // Loop through the addresses in the range selected by the user and initialize maps asynchronously
-    for (let i = firstRow; i < lastRow; i++) {
+    for (let i = firstRow; i < Math.min(lastRow, allAddresses.length); i++) {
+      console.log(i)
       const address = allAddresses[i]
       await initializeAllMaps(
         address.adressetekst,
