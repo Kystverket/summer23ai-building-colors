@@ -14,7 +14,10 @@
 
 
 ## About the project <a name="about"></a>
-A summer student project by students at the TEFT Lab in Ålesund for Kystverket. The project aims to automatically classify building colors to be used in Kystverkets' digital twin application for more realistic representation. We utilized the YOLO algorithm and Google Maps API to detect buildings and classify their color from image data. It is still a work in progress, but we currently have a semi-automatic system for classifying buildings based on address location. It can be used for testing on a small geographical area and further development. More information about the project and our thoughts on the way forward can be found in the [documentation](#docs), which should be read before starting. 
+A summer student project by students at the TEFT Lab in Ålesund for Kystverket. The project aims to automatically classify building colors to be used in Kystverkets' digital twin application for more realistic representation. We utilized the YOLO algorithm and Google Maps API to detect buildings and classify their color from image data. It is still a work in progress, but we currently have a semi-automatic system for classifying buildings based on address location. It can be used for testing on a small geographical area and further prototyping. More information about the project and our thoughts on the way forward can be found in the [documentation](#docs), which should be read before starting. 
+
+**DISCLAIMER** : This is only a proof of concept and another image source most likely will be needed as to not break the [Google Maps API Terms of Service](https://cloud.google.com/maps-platform/terms?_gl=1*1gwonbz*_ga*MTMyMDE1MTUzMi4xNjkwODc3MjIy*_ga_NRWSTWS78N*MTY5MTE0ODg1Ni45LjEuMTY5MTE0ODk5Mi4wLjAuMA..) paragraph 3.2.3 c). 
+[1881.no](https://kart.1881.no/#) has the best images we have found so far, with "skråfoto" of many towns in Norway. They do however have a freely available API to use.
 
 ## Overview <a name="overview"></a>
 **NB! Ikke ferdig**
@@ -77,6 +80,7 @@ The `prototyping\google_45degree\screenshot_old.js` file is our first successful
 - [Google Street View Static API](https://developers.google.com/maps/documentation/streetview/overview)
     - [Tutorial](https://andrewpwheeler.com/2015/12/28/using-python-to-grab-google-street-view-imagery/) 
 - [Google Maps Static API](https://developers.google.com/maps/documentation/maps-static/overview)
+- [Google Maps API Terms of Service](https://cloud.google.com/maps-platform/terms?_gl=1*1gwonbz*_ga*MTMyMDE1MTUzMi4xNjkwODc3MjIy*_ga_NRWSTWS78N*MTY5MTE0ODg1Ni45LjEuMTY5MTE0ODk5Mi4wLjAuMA..)
 
 
 
