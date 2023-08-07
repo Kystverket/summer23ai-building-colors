@@ -1,12 +1,26 @@
 # About
 
 This part of the repo makes use of the models we have trained and aims to show some of the functionalities.
-By utilizing YOLOv8 we can detect buildings in images and videos. We have used automatic scripts in order to collect images of houses. The primary use of the model is to decide based on images from the four celestial directions the color of the house.
-This is done by now by choosing the middle house from all directions and adding up the certainties for each color in the four most centered buildings. The color with the highest certainty is chosen. This method can be improved, but we wanted to use a simple method, in order to reduce the complexity.
+By utilizing YOLOv8 we can detect buildings in images and videos. We have used automatic scripts in order to collect images of houses. The primary use of the model is to decide the color of the house based on images from the four cardinal directions.
+This is done by choosing the most centered house from all four directions and adding up the models probabilities for each color. The color with the highest certainty is chosen. This method can be improved, but we wanted to use a simple method, in order to reduce the complexity. 
+We have done some tests on postal codes 6005 and 6006 in Ålesund. Note that the model is not very good at the moment, with an [mAP50](https://www.youtube.com/watch?v=oqXDdxF_Wuw&t=256s&ab_channel=Roboflow) of around 0.6. Also some of the buildings in this area are already in the training set, which should be avoided. The results we found are located at in `data/json`, with the postal code in the filename. 
+
+## Setup
+
+Assuming you have already cloned the repo and that you have python installed.
+If you don't have python you must download it first.
+[python download](https://www.python.org/downloads/)
+
+Open a terminal and navigate to your cloned repository's location. Then run:
+
+```bash
+pip install -r requirements.txt
+```
+
 
 ## Usage
 
-This is done to somewhat explain how the models can be used. You should run through `demo.ipynb`. `detection_local.ipynb` shows how one can make json files with building. It is a simplified example of the one we used on colab. The results we found are located at json, with the post code in the filename. Our final models arre `v12_larger.pt` and `v12_smaller.pt`.
+ You should run through `demo.ipynb` to get a grasp on practical use of the YOLO models. `detection_local.ipynb` is the current main program. It walks you trough the process of creating a `.json` file with addresses and color predictions from a bunch of images. For large datasets it is recommended to use Google Colab to reduce the runtime. Our final models are  `v12_larger.pt` and `v12_smaller.pt`.
 
 ## Structure
 
@@ -43,12 +57,3 @@ We used the html tool to download images from google maps. Then we used a versio
 - `video/`: Example video
   - `demo_drone.mp4`: Only to show how the model also works on a drone video
 
-## Setup
-
-Assuming you have already cloned the repo and that you have python installed.
-If you don't have python you must download it first.
-[python download](https://www.python.org/downloads/)
-
-```bash
-pip install -r requirements.txt
-```
