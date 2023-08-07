@@ -65,7 +65,7 @@ Then press the highlighted button to copy the code snippet.
 
 ### Model use
 
-The process of classifying building colors is currently split into two steps. First we download images of the address locations we are interested in. Then we run the model on the downloaded images. This is not ideal, but should be a solvable issue. However it is where we are currently at. The issue arises from the fact that the images we get are screenshots of Google Map views, and not just images fetched directly from an API. Our further thoughts about how to combat this issue going forward can be found in `link to latex document`. The steps to use the model are:
+The process of classifying building colors is currently split into two steps. First we download images of the address locations we are interested in. Then we run the model on the downloaded images. This is not ideal, but should be a solvable issue. However it is where we are currently at. The issue arises from the fact that the images we get are screenshots of Google Map views, and not just images fetched directly from an API. Our further thoughts about how to combat this issue going forward can be found in the [project report](https://github.com/Kystverket-AI-KAI/.github/blob/main/profile/Object_Detection_Guide.pdf). The steps to use the model are:
 ### Downloading Images:<a name="download"></a>
 1. Open the `index.html` file
 2. Enter the address or postalcode you want to get images from. This will send an API request to the [Open Address API from Kartverket](https://ws.geonorge.no/adresser/v1/).
