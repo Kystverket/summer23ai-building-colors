@@ -20,7 +20,7 @@ pip install -r requirements.txt
 
 ## Usage
 
- You should run through `demo.ipynb` to get a grasp on practical use of the YOLO models. `detection_local.ipynb` is the current main program. It walks you trough the process of creating a `.json` file with addresses and color predictions from a bunch of images. For large datasets it is recommended to use Google Colab to reduce the runtime. Our final models are  `v12_larger.pt` and `v12_smaller.pt`.
+ You should run through `demo.ipynb` to get a grasp on practical use of the YOLO models. `detection_local.ipynb` is the current main program. It walks you trough the process of creating a `.json` file with addresses and color predictions from a bunch of images. For large datasets it is recommended to use Google Colab or some other external computer with more processing power to reduce the runtime. Our final models are  `v12_larger.pt` and `v12_smaller.pt`.
 
 ## Structure
 
@@ -28,17 +28,15 @@ This part of the repository is structured as python notebook files which use dat
 
 ### Scripts
 
-We used the html tool to download images from google maps. Then we used a version similar to `detection_local.ipynb` to detect and classify the buildings. For training the model see the latex guide.
-
-- `detection_local.ipynb`: An example script showing the model working on a folder with images. We used a colab in order to speed it up.
-- `load_json.ipynb`: Using the json files with the data we have collected automatically. This was from postcode 6005 (430) Aspøya and 6006 Hessa (1366). We don't have the images used to create the json files included in the repo, because there are so many of them.
-- `standard_test.ipynb`: Testing the model on a standard dataset. Automatically. These images are not used for training. And the solutions are hard coded.
-- `demo.ipynb`: Basic examples of how one can use Yolo and the model we have trained. Useful to run through it.
+- `detection_local.ipynb`: An example script showing the model working on a folder with images to detect buildings and output a json file of address locations and their predicted color.
+- `load_json.ipynb`: Used to load and present the json data on a nice format.
+- `standard_test.ipynb`:  Used for testing model performance on a small standard dataset, if you want a more visual comparison of different models. These images are not used for training, and the solutions are hard coded.
+- `demo.ipynb`: Basic examples of how one can use Yolo and the models we have trained. Useful to run through it.
 - `requirements.txt`: The requirements for the project. This is used to install the necessary packages. See [setup](#setup).
 
 ### data
 
-- `buildings/`: Images of buildings. The four first are images from neighbourhoods around Ålesund.
+- `buildings/`: Images of buildings.
   - `aspoey/`: Some images from Aspøya
   - `bjoekavaagdalen/`: Some images from Bjørkåsdalen
   - `borgundvegen1/`: Some images from Borgundvegen
@@ -46,12 +44,12 @@ We used the html tool to download images from google maps. Then we used a versio
   - `examples/`: Some images used in the notebooks
   - `four_directions_1:/` Some images from four different directions
   - `four_directions_2/`: Some more images from four different directions
-  - `standardized_test/`: Some images forming a standardized test set TODO: Add Link
-- `json/`: Json files with the data we have collected
+  - `standardized_test/`: Some images forming a standardized test set
+- `json/`: Json files with the data we have tested the model on
   - `6005`: 430 addresses from four directions from 6005 (Aspøya)
   - `6006`: 1366 addresses from four directions from 6006 (Hessa)
 - `models/`: Building color detection models
-  - `building_detection.pt`: A model detecting only the building, where all classes are merged into one. This is to show the possibility of using another method for classification.
+  - `building_detection.pt`: A model detecting only the building, where all color classes are joined into one. This is to show the possibility of using another method for classification.
   - `v12_larger.pt`: One of the newest big models. From yolov8l.pt
   - `v12_smaller.pt`: One of the newest middle sized models. From yolov8m.pt
 - `video/`: Example video

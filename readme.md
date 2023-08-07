@@ -20,7 +20,7 @@ A summer student project by students at the TEFT Lab in Ålesund for Kystverket.
 As for other sources, [1881.no](https://kart.1881.no/#) has the best images we have found so far, with "skråfoto" of many towns in Norway. They do not however have a freely available API to use. 
 
 ## Overview <a name="overview"></a>
-**NB! Ikke ferdig**
+
 ### Important contents ###
 - `index.html` is used for fetching images to be put into the model. The functionality lies within `js/automatic-screenshot.js`
 - The `yolo_implementation` folder contains jupyter notebooks for using the model.
@@ -44,11 +44,26 @@ This should be enough to run all the code except the `csv-reader.js` inside `pro
 ## Usage <a name="usage"></a>
 
 ### Building a dataset
-In this project we used [roboflow](https://roboflow.com/) to create our own dataset for building the model. Please refer to the [documentation](#docs) for further details on how to construct a dataset. To fetch the images we used a tool inside `tools` which allows the user quickly grab screenshots of specific buildings. To use it open the `tool.html` file. This will render four different Google Maps views. Center the building you want by clicking the topmost map. This should automatically center all the maps. Sometimes you will need manual adjustment of a map to get a good image, so make sure to double check before downloading. Download the images by clicking on the 'Take screenshot' button. 
- 
-<img src="assets/tool.png"  width="600" /><br>
+In this project we used [roboflow](https://roboflow.com/) to create our own dataset for building the model. Please refer to the [documentation](#docs) for further details on how to construct a dataset. Our project with different dataset versions can be found [here](https://universe.roboflow.com/ntnu-3oxpl/project-mb). v12 is the version used for training our latest models. v16 contains the same images but images tagged with either "shadow" or "bad" are excluded. v13 joins all color classes into one superclass called buildings.
 
-### Model
+To fetch the images we used a tool inside `tools` which allows the user quickly grab screenshots of specific buildings. To use it open the `tool.html` file. This will render four different Google Maps views. Center the building you want by clicking the topmost map. This should automatically center all the maps. Sometimes you will need manual adjustment of a map to get a good image, so make sure to double check before downloading. Download the images by clicking on the 'Take screenshot' button. 
+ 
+<img src="assets/tool.png"  width="800" /><br>
+
+### Model training
+Please refer to our guides for how to train a Yolo model:
+- [Object detection 101](https://colab.research.google.com/drive/1GLWpHQ8mNH1Mfj1RJzq4046cb_qbuInI) - a general guide on how to train and export your own Yolo model.
+- [Object_Detection_Buildings](https://colab.research.google.com/drive/1bmXk0ZHTdMl8Cikm1-Y3JRnMGnzOO1_Y?usp=sharing#scrollTo=ECqlKZCHU5H8) - a guide on how to train and export your own Yolo model specifically for building colors.
+
+When using the guides you will need a code snippet to import the dataset you would like to train the model on from Roboflow. From the [link](https://universe.roboflow.com/ntnu-3oxpl/project-mb/dataset/12) Press the "Download dataset" button. 
+
+ <img src="assets/download.png"  width="600" /><br>
+
+Then press the highlighted button to copy the code snippet.
+
+ <img src="assets/codesnippet.png"  width="600" /><br>
+
+### Model use
 
 The process of classifying building colors is currently split into two steps. First we download images of the address locations we are interested in. Then we run the model on the downloaded images. This is not ideal, but should be a solvable issue. However it is where we are currently at. The issue arises from the fact that the images we get are screenshots of Google Map views, and not just images fetched directly from an API. Our further thoughts about how to combat this issue going forward can be found in `link to latex document`. The steps to use the model are:
 ### Downloading Images:<a name="download"></a>
@@ -66,7 +81,7 @@ The process of classifying building colors is currently split into two steps. Fi
     <img src="assets/imagegetter.png"  width="600" /><br>
 
 ### Running the Model<a name="model"></a>
-1. Put some steps here
+ - Read the `README.md` file inside `yolo_implementation/` for setting up and running the model.
 
 ## Prototyping <a name="prototyping"></a>
 We have also experimented with different some different image sources from Google, namely Street View and Static Satellite map. In `prototyping\google_streetview` and `prototyping\google_staticmap` respectively there is code for fetching images from these sources using Python.<br><br>
