@@ -39,12 +39,12 @@ API = {"API_KEY": "your-API key"}
 //the different scripts. Add your personal google API key to this file.
 //When this is done, rename the file to "config.js"
 ```
-This should be enough to run all the code except the `csv-reader.js` inside `prototyping/google_45degree`. More information about the prototypes can be read in the separate section on [prototyping](#prototyping). 
+This should be enough to run all the "frontend" code except the `csv-reader.js` inside `prototyping/google_45degree`. More information about the prototypes can be read in the separate section on [prototyping](#prototyping). Setup of the model itself is described in the `README.md` file inside `yolo_implementation/`.
 
 ## Usage <a name="usage"></a>
 
 ### Building a dataset
-In this project we used [roboflow](https://roboflow.com/) to create our own dataset for building the model. Please refer to the [documentation](#docs) for further details on how to construct a dataset. Our project with different dataset versions can be found [here](https://universe.roboflow.com/ntnu-3oxpl/project-mb). v12 is the version used for training our latest models. v16 contains the same images but images tagged with either "shadow" or "bad" are excluded. v13 joins all color classes into one superclass called buildings.
+In this project we used [roboflow](https://roboflow.com/) to create our own dataset for building the model. Please refer to the [documentation](#docs) for further details on how to construct a dataset. Our project with different dataset versions can be found [here](https://universe.roboflow.com/ntnu-3oxpl/project-mb). v12 is the version used for training our latest models. v16 contains the same images but images tagged with either "shadow" or "bad" are excluded. v13 joins all color classes into one superclass called buildings. The older datasets are mostly redundant.
 
 To fetch the images we used a tool inside `tools` which allows the user quickly grab screenshots of specific buildings. To use it open the `tool.html` file. This will render four different Google Maps views. Center the building you want by clicking the topmost map. This should automatically center all the maps. Sometimes you will need manual adjustment of a map to get a good image, so make sure to double check before downloading. Download the images by clicking on the 'Take screenshot' button. 
  
