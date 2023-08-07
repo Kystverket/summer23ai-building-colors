@@ -14,7 +14,7 @@
 
 
 ## About the project <a name="about"></a>
-A summer student project by students at the TEFT Lab in Ålesund for Kystverket. The project aims to automatically classify building colors to be used in Kystverkets' digital twin application for more realistic representation. We utilized the YOLO algorithm and Google Maps API to detect buildings and classify their color from image data. It is still a work in progress, but we currently have a semi-automatic system for classifying buildings based on address location. It can be used for testing on a small geographical area and further prototyping. More information about the project and our thoughts on the way forward can be found in the [documentation](#docs), which should be read before starting. 
+A summer student project by students at the TEFT Lab in Ålesund for Kystverket. The project aims to automatically classify building colors to be used in Kystverkets' digital twin application for more realistic representation. We utilized the YOLO algorithm and Google Maps API to detect buildings and classify their color from image data. It is still a work in progress, but we currently have a semi-automatic system for classifying buildings based on address location. It can be used for testing on a small geographical area and further prototyping. More information about the project and our thoughts on the way forward can be found in the [documentation](#docs). The [project report](https://github.com/Kystverket-AI-KAI/.github/blob/main/profile/Object_Detection_Guide.pdf) should be read before starting.
 
 **DISCLAIMER** : This is only a proof of concept and another image source most likely will be needed as to not break the [Google Maps API Terms of Service](https://cloud.google.com/maps-platform/terms?_gl=1*1gwonbz*_ga*MTMyMDE1MTUzMi4xNjkwODc3MjIy*_ga_NRWSTWS78N*MTY5MTE0ODg1Ni45LjEuMTY5MTE0ODk5Mi4wLjAuMA..) paragraph 3.2.3 c). Google does however encourage creative use of their [services](https://www.google.com/intl/en-GB_ALL/permissions/geoguidelines/), so this project might be in a gray area.
 As for other sources, [1881.no](https://kart.1881.no/#) has the best images we have found so far, with "skråfoto" of many towns in Norway. They do not however have a freely available API to use. 
@@ -100,7 +100,7 @@ The `prototyping\google_45degree\screenshot_old.js` file is our first successful
 
 
 ## Documentation <a name="docs"></a>
-- Refer to latex guide
+- [Project report](https://github.com/Kystverket-AI-KAI/.github/blob/main/profile/Object_Detection_Guide.pdf)
 - [Object detection 101](https://colab.research.google.com/drive/1GLWpHQ8mNH1Mfj1RJzq4046cb_qbuInI) - a general guide on how to train and export your own Yolo model.
 - [Object_Detection_Buildings](https://colab.research.google.com/drive/1bmXk0ZHTdMl8Cikm1-Y3JRnMGnzOO1_Y?usp=sharing#scrollTo=ECqlKZCHU5H8) - a guide on how to train and export your own Yolo model specifically for building colors.
 - [Roboflow Docs](https://docs.roboflow.com/)
