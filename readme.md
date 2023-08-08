@@ -52,8 +52,8 @@ To fetch the images we used a tool inside `tools` which allows the user quickly 
 
 ### Model training
 Please refer to our guides for how to train a Yolo model:
-- [Object detection 101](https://colab.research.google.com/drive/1GLWpHQ8mNH1Mfj1RJzq4046cb_qbuInI) - a general guide on how to train and export your own Yolo model.
-- [Object_Detection_Buildings](https://colab.research.google.com/drive/1bmXk0ZHTdMl8Cikm1-Y3JRnMGnzOO1_Y?usp=sharing#scrollTo=ECqlKZCHU5H8) - a guide on how to train and export your own Yolo model specifically for building colors.
+- [Object detection 101](https://colab.research.google.com/drive/1GLWpHQ8mNH1Mfj1RJzq4046cb_qbuInI) - a general guide on how to train and export your own Yolo model, with excavator detection as an example.
+- [Object_Detection_Buildings](https://colab.research.google.com/drive/1bmXk0ZHTdMl8Cikm1-Y3JRnMGnzOO1_Y?usp=sharing#scrollTo=ECqlKZCHU5H8) - a guide on how to train and export your own Yolo, with building color classification as an example.
 
 When using the guides you will need a code snippet to import the dataset you would like to train the model on from Roboflow. From the [link](https://universe.roboflow.com/ntnu-3oxpl/project-mb/dataset/12) Press the "Download dataset" button. 
 
