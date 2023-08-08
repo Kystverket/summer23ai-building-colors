@@ -65,7 +65,7 @@ Then press the highlighted button to copy the code snippet.
 
 ### Model use
 
-The process of classifying building colors is currently split into two steps. First we download images of the address locations we are interested in. Then we run the model on the downloaded images. This is not ideal, but should be a solvable issue. However it is where we are currently at. The issue arises from the fact that the images we get are screenshots of Google Map views, and not just images fetched directly from an API. Our further thoughts about how to combat this issue going forward can be found in the [project report](https://github.com/Kystverket-AI-KAI/.github/blob/main/profile/Object_Detection_Guide.pdf). The steps to use the model are:
+The process of classifying building colors is currently split into two steps. First we download images of the address locations we are interested in. Then we run the model on the downloaded images. This is not ideal, but should be a solvable issue. However it is where we are currently at. The issue arises from the fact that the images we get are screenshots of Google Map views, and not just images fetched directly from a URL. Our further thoughts about how to combat this issue going forward can be found in the [project report](https://github.com/Kystverket-AI-KAI/.github/blob/main/profile/Object_Detection_Guide.pdf). The steps to use the model are:
 ### Downloading Images:<a name="download"></a>
 1. Open the `index.html` file
 2. Enter the address or postalcode you want to get images from. This will send an API request to the [Open Address API from Kartverket](https://ws.geonorge.no/adresser/v1/).
@@ -101,8 +101,8 @@ The `prototyping\google_45degree\screenshot_old.js` file is our first successful
 
 ## Documentation <a name="docs"></a>
 - [Project report](https://github.com/Kystverket-AI-KAI/.github/blob/main/profile/Object_Detection_Guide.pdf)
-- [Object detection 101](https://colab.research.google.com/drive/1GLWpHQ8mNH1Mfj1RJzq4046cb_qbuInI) - a general guide on how to train and export your own Yolo model.
-- [Object_Detection_Buildings](https://colab.research.google.com/drive/1bmXk0ZHTdMl8Cikm1-Y3JRnMGnzOO1_Y?usp=sharing#scrollTo=ECqlKZCHU5H8) - a guide on how to train and export your own Yolo model specifically for building colors.
+- [Object detection 101](https://colab.research.google.com/drive/1GLWpHQ8mNH1Mfj1RJzq4046cb_qbuInI) - a general guide on how to train and export your own Yolo model, with Excavator detection as an example.
+- [Object_Detection_Buildings](https://colab.research.google.com/drive/1bmXk0ZHTdMl8Cikm1-Y3JRnMGnzOO1_Y?usp=sharing#scrollTo=ECqlKZCHU5H8) - a guide on how to train and export your own Yolo model, with building color classification as an example.
 - [Roboflow Docs](https://docs.roboflow.com/)
 - [Ultralytics YOLOv8 Docs](https://docs.ultralytics.com/)
 
